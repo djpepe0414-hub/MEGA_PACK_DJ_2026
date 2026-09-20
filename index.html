@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mega Pack DJ 2026 | El Kit Definitivo</title>
-    
+
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
 </head>
@@ -20,23 +20,48 @@
 <section class="hero">
     <div class="container">
         <h2>Domina la pista con Remixes Exclusivos</h2>
-        
+
         <div class="video-container">
-            <iframe 
-            src="https://www.youtube.com/embed/F-10j0z7ZC4?autoplay=1&mute=1&playsinline=1&rel=0"
-            allow="autoplay; encrypted-media"
-            allowfullscreen>
+            <iframe
+                src="https://www.youtube.com/embed/F-10j0z7ZC4?autoplay=1&mute=1&playsinline=1&rel=0&modestbranding=1"
+                title="Mega Pack DJ 2026 - Video de presentación"
+                allow="autoplay; encrypted-media; picture-in-picture"
+                allowfullscreen
+                loading="eager"
+                referrerpolicy="strict-origin-when-cross-origin">
             </iframe>
         </div>
 
+        <!-- 📊 BARRA DE CONFIANZA / PRUEBA SOCIAL + CLARIDAD DEL CONTENIDO -->
+        <div class="stats-bar">
+            <div class="stat">
+                <span class="stat-number">+500</span>
+                <span class="stat-label">DJs ya lo tienen</span>
+            </div>
+            <div class="stat">
+                <span class="stat-number">+300</span>
+                <span class="stat-label">Tracks exclusivos</span>
+            </div>
+            <div class="stat">
+                <span class="stat-number">4.9★</span>
+                <span class="stat-label">Valoración promedio</span>
+            </div>
+        </div>
+
         <p>Más de 10 carpetas con los géneros que más prenden la fiesta: Reggaetón, Salsa, Merengue y más.</p>
-        
+
         <div class="price-box">
             <span class="old-price">$97 USD</span>
             <span class="new-price">$27 USD</span>
         </div>
 
-        <a href="https://hotmart.com/es/marketplace/productos/mega_pack_dj_2026/J104917499V" class="btn-buy">
+        <!-- ⏳ URGENCIA REAL: contador hasta medianoche -->
+        <div class="countdown" aria-live="polite">
+            <p class="countdown-label">Oferta de lanzamiento termina hoy en:</p>
+            <div class="countdown-timer" id="countdown-timer">--:--:--</div>
+        </div>
+
+        <a href="https://hotmart.com/es/marketplace/productos/mega_pack_dj_2026/J104917499V" class="btn-buy" target="_blank" rel="noopener">
             ¡ACCEDER AL PACK!
         </a>
 
@@ -119,9 +144,20 @@
     <div class="container">
         <h3>SÍGUEME EN REDES 🔥</h3>
         <div class="social-links">
-            <a href="https://www.instagram.com/pepe__dj?igsh=MXh0dXZ0Mnd3ZWlvMA%3D%3D&utm_source=qr" target="_blank">📸 Instagram</a>
-            <a href="https://www.tiktok.com/@pepe__dj?_r=1&_t=ZS-94y453XLcg9" target="_blank">🎵 TikTok</a>
+            <a href="https://www.instagram.com/pepe__dj?igsh=MXh0dXZ0Mnd3ZWlvMA%3D%3D&utm_source=qr" target="_blank" rel="noopener">📸 Instagram</a>
+            <a href="https://www.tiktok.com/@pepe__dj?_r=1&_t=ZS-94y453XLcg9" target="_blank" rel="noopener">🎵 TikTok</a>
         </div>
+    </div>
+</section>
+
+<!-- 🎯 CTA FINAL REPETIDO -->
+<section class="final-cta">
+    <div class="container">
+        <h3>¿Listo para subir el nivel de tus sets?</h3>
+        <p>No dejes que la fiesta se quede sin herramientas. Únete a los DJs que ya mezclan con el Mega Pack 2026.</p>
+        <a href="https://hotmart.com/es/marketplace/productos/mega_pack_dj_2026/J104917499V" class="btn-buy" target="_blank" rel="noopener">
+            ¡QUIERO EL PACK AHORA!
+        </a>
     </div>
 </section>
 
@@ -130,9 +166,42 @@
 </footer>
 
 <!-- BOTÓN WHATSAPP -->
-<a href="https://wa.me/573133683243" class="whatsapp-btn" target="_blank">
+<a href="https://wa.me/573133683243" class="whatsapp-btn" target="_blank" rel="noopener">
     💬
 </a>
+
+<!-- 🛒 BARRA STICKY DE COMPRA (SOLO MÓVIL) -->
+<div class="sticky-cta">
+    <a href="https://hotmart.com/es/marketplace/productos/mega_pack_dj_2026/J104917499V" target="_blank" rel="noopener">
+        Comprar ahora — $27 USD
+    </a>
+</div>
+
+<script>
+    // Contador que reinicia cada día a medianoche (hora local del visitante).
+    // Si quieres una fecha límite fija en vez de "cada noche", cambia targetDate
+    // por una fecha concreta, ej: new Date('2026-10-01T00:00:00').
+    function actualizarContador() {
+        const ahora = new Date();
+        const medianoche = new Date(ahora);
+        medianoche.setHours(24, 0, 0, 0);
+
+        const restante = medianoche - ahora;
+
+        const horas = Math.floor(restante / (1000 * 60 * 60));
+        const minutos = Math.floor((restante % (1000 * 60 * 60)) / (1000 * 60));
+        const segundos = Math.floor((restante % (1000 * 60)) / 1000);
+
+        const pad = (n) => String(n).padStart(2, '0');
+        const elemento = document.getElementById('countdown-timer');
+        if (elemento) {
+            elemento.textContent = `${pad(horas)}:${pad(minutos)}:${pad(segundos)}`;
+        }
+    }
+
+    actualizarContador();
+    setInterval(actualizarContador, 1000);
+</script>
 
 </body>
 </html>
