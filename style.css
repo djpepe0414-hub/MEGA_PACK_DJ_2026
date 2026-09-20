@@ -1,34 +1,10 @@
- automáticamente por la variable, pero ajusto el rgba del glow del video que estaba fijo en verde):
-
-Editó un archivo, archivos compartidos
-Resumen de lo que cambié:
-
-Color principal: de verde neón (
-#00ff88) a morado neón (
-#b026ff) — se actualiza automáticamente en todo el sitio (título, precio, botón de compra, bordes) porque usa la variable --primary.
-Tarjetas de "10 carpetas / Samplers / Software": al pasar el mouse se levantan un poco (translateY) y les aparece un borde y glow morado.
-Tarjetas de bonos (guía de redes sociales y plantilla de biblioteca): el borde punteado se vuelve sólido y brilla en morado al pasar el mouse.
-Géneros incluidos: cada género se ilumina con text-shadow morado y un fondo sutil al pasar por encima.
-Testimonios: también se levantan y brillan al hacer hover.
-Video: el contorno le agrega un glow más intenso al pasar el mouse por encima.
-Botón de compra: el glow se intensifica al hacer hover, además del efecto de escala que ya tenía.
-Solo necesitas reemplazar tu style.css en el repositorio — el index.html sigue siendo el mismo de antes. Si quieres que el morado sea más oscuro/elegante en vez de tan neón, o que agregue el mismo efecto a los botones de Instagram/TikTok (que ya tienen un hover, pero puedo hacerlo más "glow" también), dime y lo ajusto.
-
-
-Style
-Código·CSS 
-
-
-
-Claude es una IA y puede cometer errores.
-Style · CSS
 :root {
     --primary: #b026ff; /* Morado Neón para DJs */
     --bg: #0a0a0a;
     --text: #ffffff;
     --card-bg: #1a1a1a;
 }
- 
+
 body {
     font-family: 'Inter', sans-serif;
     background-color: var(--bg);
@@ -36,49 +12,49 @@ body {
     margin: 0;
     text-align: center;
 }
- 
+
 .container {
     max-width: 900px;
     margin: 0 auto;
     padding: 0 20px;
 }
- 
+
 header {
     padding: 30px 0;
 }
- 
+
 h1 span {
     color: var(--primary);
 }
- 
+
 .hero {
     padding: 60px 0;
     background: linear-gradient(180deg, #0a0a0a 0%, #1a1a1a 100%);
     border-bottom: 2px solid var(--primary);
 }
- 
+
 h2 {
     font-size: 2.5rem;
     font-weight: 900;
 }
- 
+
 .price-box {
     margin: 20px 0;
 }
- 
+
 .old-price {
     text-decoration: line-through;
     color: #888;
     font-size: 1.2rem;
     margin-right: 10px;
 }
- 
+
 .new-price {
     font-size: 3rem;
     color: var(--primary);
     font-weight: 900;
 }
- 
+
 .btn-buy {
     display: inline-block;
     background-color: var(--primary);
@@ -91,22 +67,22 @@ h2 {
     transition: transform 0.3s ease;
     box-shadow: 0 0 20px rgba(176, 38, 255, 0.4);
 }
- 
+
 .btn-buy:hover {
     transform: scale(1.05);
     box-shadow: 0 0 35px rgba(176, 38, 255, 0.7);
 }
- 
+
 .features {
     padding: 50px 0;
 }
- 
+
 .grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 20px;
 }
- 
+
 .feature {
     background: var(--card-bg);
     padding: 20px;
@@ -114,43 +90,43 @@ h2 {
     border: 1px solid transparent;
     transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
 }
- 
+
 .feature:hover {
     transform: translateY(-5px);
     border-color: var(--primary);
     box-shadow: 0 0 25px rgba(176, 38, 255, 0.5);
 }
- 
+
 .genres {
     padding: 40px;
     background: #111;
 }
- 
+
 .genres ul {
     list-style: none;
     padding: 0;
     font-size: 1.2rem;
 }
- 
+
 .genres li {
     margin-bottom: 10px;
     padding: 8px 16px;
     border-radius: 8px;
     transition: color 0.3s ease, text-shadow 0.3s ease, background 0.3s ease;
 }
- 
+
 .genres li:hover {
     color: var(--primary);
     text-shadow: 0 0 12px rgba(176, 38, 255, 0.9);
     background: rgba(176, 38, 255, 0.08);
 }
- 
+
 footer {
     padding: 30px;
     font-size: 0.8rem;
     color: #555;
 }
- 
+
 /* VIDEO */
 .video-container {
     position: relative;
@@ -163,11 +139,11 @@ footer {
     box-shadow: 0 0 30px rgba(176, 38, 255, 0.3);
     transition: box-shadow 0.3s ease;
 }
- 
+
 .video-container:hover {
     box-shadow: 0 0 45px rgba(176, 38, 255, 0.6);
 }
- 
+
 .video-container iframe {
     position: absolute;
     top: 0;
@@ -177,38 +153,38 @@ footer {
     border: 0;
     display: block;
 }
- 
+
 /* BONOS */
 .bonus-section {
     padding: 60px 0;
     background-color: #0f0f0f;
 }
- 
+
 .bonus-section h3 {
     color: var(--primary);
     margin-bottom: 30px;
 }
- 
+
 .feature.bonus {
     border: 1px dashed var(--primary);
 }
- 
+
 .feature.bonus:hover {
     border-style: solid;
     box-shadow: 0 0 30px rgba(176, 38, 255, 0.6);
 }
- 
+
 .icon {
     font-size: 2.5rem;
     margin-bottom: 10px;
 }
- 
+
 /* TESTIMONIOS */
 .testimonials {
     padding: 60px 0;
     background: #050505;
 }
- 
+
 .testimonial-card {
     background: #222;
     padding: 30px;
@@ -218,12 +194,12 @@ footer {
     border-left: 4px solid var(--primary);
     transition: box-shadow 0.3s ease, transform 0.3s ease;
 }
- 
+
 .testimonial-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 0 25px rgba(176, 38, 255, 0.4);
 }
- 
+
 .testimonial-card span {
     display: block;
     margin-top: 15px;
@@ -231,20 +207,20 @@ footer {
     color: var(--primary);
     font-style: normal;
 }
- 
+
 /* TITULOS */
 h3 {
     font-size: 1.8rem;
     text-transform: uppercase;
 }
- 
+
 /* 🔒 TEXTO DE SEGURIDAD */
 .secure-text {
     margin-top: 10px;
     font-size: 14px;
     opacity: 0.8;
 }
- 
+
 /* 💬 WHATSAPP FLOAT */
 .whatsapp-btn {
     position: fixed;
@@ -260,26 +236,26 @@ h3 {
     z-index: 1000;
     transition: transform 0.3s ease;
 }
- 
+
 .whatsapp-btn:hover {
     transform: scale(1.1);
 }
- 
+
 /* 🌐 REDES SOCIALES */
 .social {
     background: #0f0f0f;
     padding: 50px 20px;
     border-top: 2px solid var(--primary);
 }
- 
+
 .social h3 {
     color: var(--primary);
 }
- 
+
 .social-links {
     margin-top: 20px;
 }
- 
+
 .social-links a {
     display: inline-block;
     margin: 10px;
@@ -292,7 +268,7 @@ h3 {
     transition: all 0.3s ease;
     border: 1px solid transparent;
 }
- 
+
 .social-links a:hover {
     background: var(--primary);
     color: #000;
