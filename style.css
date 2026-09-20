@@ -1,6 +1,29 @@
+ automáticamente por la variable, pero ajusto el rgba del glow del video que estaba fijo en verde):
+
+Editó un archivo, archivos compartidos
+Resumen de lo que cambié:
+
+Color principal: de verde neón (
+#00ff88) a morado neón (
+#b026ff) — se actualiza automáticamente en todo el sitio (título, precio, botón de compra, bordes) porque usa la variable --primary.
+Tarjetas de "10 carpetas / Samplers / Software": al pasar el mouse se levantan un poco (translateY) y les aparece un borde y glow morado.
+Tarjetas de bonos (guía de redes sociales y plantilla de biblioteca): el borde punteado se vuelve sólido y brilla en morado al pasar el mouse.
+Géneros incluidos: cada género se ilumina con text-shadow morado y un fondo sutil al pasar por encima.
+Testimonios: también se levantan y brillan al hacer hover.
+Video: el contorno le agrega un glow más intenso al pasar el mouse por encima.
+Botón de compra: el glow se intensifica al hacer hover, además del efecto de escala que ya tenía.
+Solo necesitas reemplazar tu style.css en el repositorio — el index.html sigue siendo el mismo de antes. Si quieres que el morado sea más oscuro/elegante en vez de tan neón, o que agregue el mismo efecto a los botones de Instagram/TikTok (que ya tienen un hover, pero puedo hacerlo más "glow" también), dime y lo ajusto.
+
+
+Style
+Código·CSS 
+
+
+
+Claude es una IA y puede cometer errores.
 Style · CSS
 :root {
-    --primary: #00ff88; /* Color Neón para DJs */
+    --primary: #b026ff; /* Morado Neón para DJs */
     --bg: #0a0a0a;
     --text: #ffffff;
     --card-bg: #1a1a1a;
@@ -66,11 +89,12 @@ h2 {
     border-radius: 50px;
     font-size: 1.5rem;
     transition: transform 0.3s ease;
-    box-shadow: 0 0 20px rgba(0, 255, 136, 0.4);
+    box-shadow: 0 0 20px rgba(176, 38, 255, 0.4);
 }
  
 .btn-buy:hover {
     transform: scale(1.05);
+    box-shadow: 0 0 35px rgba(176, 38, 255, 0.7);
 }
  
 .features {
@@ -87,6 +111,14 @@ h2 {
     background: var(--card-bg);
     padding: 20px;
     border-radius: 15px;
+    border: 1px solid transparent;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+ 
+.feature:hover {
+    transform: translateY(-5px);
+    border-color: var(--primary);
+    box-shadow: 0 0 25px rgba(176, 38, 255, 0.5);
 }
  
 .genres {
@@ -102,6 +134,15 @@ h2 {
  
 .genres li {
     margin-bottom: 10px;
+    padding: 8px 16px;
+    border-radius: 8px;
+    transition: color 0.3s ease, text-shadow 0.3s ease, background 0.3s ease;
+}
+ 
+.genres li:hover {
+    color: var(--primary);
+    text-shadow: 0 0 12px rgba(176, 38, 255, 0.9);
+    background: rgba(176, 38, 255, 0.08);
 }
  
 footer {
@@ -119,7 +160,12 @@ footer {
     border: 3px solid var(--primary);
     border-radius: 15px;
     overflow: hidden;
-    box-shadow: 0 0 30px rgba(0, 255, 136, 0.2);
+    box-shadow: 0 0 30px rgba(176, 38, 255, 0.3);
+    transition: box-shadow 0.3s ease;
+}
+ 
+.video-container:hover {
+    box-shadow: 0 0 45px rgba(176, 38, 255, 0.6);
 }
  
 .video-container iframe {
@@ -147,6 +193,11 @@ footer {
     border: 1px dashed var(--primary);
 }
  
+.feature.bonus:hover {
+    border-style: solid;
+    box-shadow: 0 0 30px rgba(176, 38, 255, 0.6);
+}
+ 
 .icon {
     font-size: 2.5rem;
     margin-bottom: 10px;
@@ -165,6 +216,12 @@ footer {
     font-style: italic;
     position: relative;
     border-left: 4px solid var(--primary);
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+ 
+.testimonial-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 25px rgba(176, 38, 255, 0.4);
 }
  
 .testimonial-card span {
